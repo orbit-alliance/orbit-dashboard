@@ -9,6 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const translations_data = translations[locale as TranslationsKeys].login;
   return {
     title: `Orbit Alliance | ${translations_data.title_page}`,
+    description: translations_data.description_page,
   };
 }
 
