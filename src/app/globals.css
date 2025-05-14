@@ -1,2 +1,12 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+:root {
+    --blue-42: #00babc
+}
+
+.btn-42 {
+    @apply btn;
+    background-color: var(--blue-42);
+    color: white;
+}

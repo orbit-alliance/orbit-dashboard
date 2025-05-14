@@ -1,9 +1,12 @@
-import React from 'react';
+import Button42Login from "@/components/molecules/Button42Login";
+import React, { FC } from "react";
 
-// import { Container } from './styles';
-
-const LoginTemplate: React.FC = () => {
-  return <div />;
-}
+const LoginTemplate: FC = () => {
+  return (
+    <div className="flex flex-col items-center justify-center h-screen">
+      <Button42Login />
+    </div>
+  );
+};
 
 export default LoginTemplate;
