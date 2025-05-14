@@ -1,12 +1,16 @@
-import LoginTemplate from '@/components/templates/LoginTemplate';
-import { Metadata } from 'next';
-import React, { FC } from 'react';
+import LoginTemplate from "@/components/templates/LoginTemplate";
+import translations, { TranslationsKeys } from "@/i18n/namespaces";
+import { Metadata } from "next";
+import { cookies } from "next/headers";
+import React, { FC } from "react";
 
-export const metadata: Metadata = {
-    title: 'Orbit alliance | Login',
-    description: 'Login page for Orbit alliance',
-};
-
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = (await cookies()).get("locale")?.value || "en";
+  const translations_data = translations[locale as TranslationsKeys].login;
+  return {
+    title: `Orbit Alliance | ${translations_data.title_page}`,
+  };
+}
 
 const login: FC = () => <LoginTemplate />;
 

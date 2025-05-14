@@ -2,12 +2,10 @@
 import loginTranslations from "@/../messages/en/login.json";
 
 const translations = {
-    en: {}
-};
-
-translations.en = {
-  login: loginTranslations,
-};
+    en: {
+        login: loginTranslations,
+    }
+} as const;
 
 export type Translations = typeof translations;
 export type TranslationsKeys = keyof typeof translations;
