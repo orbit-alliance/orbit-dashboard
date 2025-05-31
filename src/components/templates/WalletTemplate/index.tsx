@@ -9,7 +9,7 @@ const WalletTemplate: React.FC = () => {
       event.preventDefault();
       const formData = new FormData(event.currentTarget);
       const walletAddress = formData.get("wallet") as string;
-      const { data: api_wallet_address } = await orbitApi.post("/wallet", {
+      const { data: api_wallet_address } = await orbitApi.post("/user", {
         walletId: walletAddress,
       });
       if (api_wallet_address.status === 200)
