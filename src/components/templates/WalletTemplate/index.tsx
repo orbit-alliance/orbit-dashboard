@@ -10,7 +10,7 @@ const WalletTemplate: React.FC = () => {
       const formData = new FormData(event.currentTarget);
       const walletAddress = formData.get("wallet") as string;
       const { data: api_wallet_address } = await orbitApi.post("/user", {
-        walletId: walletAddress,
+        wallet_address: walletAddress,
       });
       if (api_wallet_address.status === 200)
         alert("Endereço da carteira enviado com sucesso!")
