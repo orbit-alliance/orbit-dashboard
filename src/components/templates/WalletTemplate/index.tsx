@@ -1,6 +1,6 @@
 "use client";
 import Header from "@/components/organism/Header";
-import { api42 } from "@/services/apis/api";
+import { orbitApi } from "@/services/apis/api";
 import React, { FormEvent } from "react";
 
 const WalletTemplate: React.FC = () => {
@@ -9,7 +9,7 @@ const WalletTemplate: React.FC = () => {
       event.preventDefault();
       const formData = new FormData(event.currentTarget);
       const walletAddress = formData.get("wallet") as string;
-      const { data: api_wallet_address } = await api42.post("/wallet", {
+      const { data: api_wallet_address } = await orbitApi.post("/wallet", {
         walletId: walletAddress,
       });
       if (api_wallet_address.status === 200)
