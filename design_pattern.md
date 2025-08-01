@@ -237,12 +237,9 @@ Baseado na estrutura existente em [`src/components`](src/components), você já 
 ## Ferramentas Recomendadas
 
 - **Storybook**: Para documentar e testar componentes isoladamente
-- **TypeScript**: Para tipagem forte e melhor DX
-- **CSS Modules ou Styled Components**: Para estilos isolados
 - **Jest + Testing Library**: Para testes unitários
 
 ## Recursos Adicionais
 
 - [Atomic Design por Brad Frost](https://atomicdesign.bradfrost.com/)
-- [Storybook Documentation](https://storybook.js.org/)
 - [Design Systems with React](https://designsystemsbook.com/)
