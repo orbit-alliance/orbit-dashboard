@@ -1,15 +1,27 @@
 "use client";
-import React from 'react';
+import React, { useEffect, useState } from "react";
 
-// import { Container } from './styles';
+const App: React.FC = () => {
+  const [hasInvalidCode, setHasInvalidCode] = useState(false);
 
-function AppWrapper() {
+  useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const code = params.get('code');
-    if (!code) return <div>Invalid code</div>;
-    localStorage.setItem('token42', code);
-    location.href = '/app/wallet';
-  return ;
-}
+    const code = params.get("code");
 
-export default AppWrapper;
+    if (!code) {
+      setHasInvalidCode(true);
+      return; // Early return for invalid code
+    }
+
+    localStorage.setItem("token42", code);
+    window.location.href = "/app/wallet";
+  }, []);
+
+  if (hasInvalidCode) {
+    return <div>Invalid code</div>;
+  }
+
+  return <div />;
+};
+
+export default App;
