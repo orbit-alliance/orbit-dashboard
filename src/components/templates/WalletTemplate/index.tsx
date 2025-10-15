@@ -9,9 +9,13 @@ const WalletTemplate: React.FC = () => {
       event.preventDefault();
       const formData = new FormData(event.currentTarget);
       const walletAddress = formData.get("wallet") as string;
-      const { data: api_wallet_address } = await orbitApi.post("/user", {
+      const payload ={
+        intra_token: localStorage.getItem("token42"),
         wallet_address: walletAddress,
-      });
+    }
+    console.log(payload);
+      const { data: api_wallet_address } = await orbitApi.post("/user", payload);
+
       if (api_wallet_address.status === 200)
         alert("Endereço da carteira enviado com sucesso!")
     } catch (error) {
